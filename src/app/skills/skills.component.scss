@@ -1,0 +1,65 @@
+@use "../utilities/global" as global;
+
+* {
+  color: global.$white;
+}
+
+.size-l {
+  font-size: 3cqw;
+}
+
+.main-container {
+  margin: 2% 8% 5% 10%;
+  display: grid;
+}
+
+.header-part-2 {
+  color: global.$blue;
+}
+
+.dash {
+  width: 50%;
+  height: 1.25cqh;
+  background-color: global.$blue;
+  margin-top: 2cqh;
+  border-radius: 1cqh;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5cqw;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-header {
+  margin-top: 4cqh;
+}
+
+.dash2 {
+  width: 50%;
+  height: 0.75cqh;
+  background-color: global.$green;
+  margin-top: 1cqh;
+  margin-bottom: 2cqh;
+  border-radius: 1cqh;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+}
+
+.progress-bar {
+  height: 0.75cqh;
+  background-color: global.$gray;
+}
+
+.progress-bar-fill {
+  background-color: global.$blue;
+  height: 100%;
+}

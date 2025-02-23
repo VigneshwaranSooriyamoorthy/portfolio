@@ -1,0 +1,76 @@
+@use "../utilities/global" as global;
+
+* {
+  color: global.$white;
+}
+
+.main-container {
+  margin: 3% 10% 5% 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-name {
+  font-size: 5cqw;
+  color: global.$blue;
+}
+
+.last-name {
+  font-size: 4.25cqw;
+}
+
+.dash {
+  width: 50%;
+  height: 2cqh;
+  background-color: global.$blue;
+  margin-top: 5cqh;
+  margin-bottom: 5cqh;
+  border-radius: 1cqh;
+}
+
+.role {
+  font-size: 2cqw;
+  margin-bottom: 3cqh;
+}
+
+.apps {
+  margin-bottom: 2cqw;
+}
+
+.app {
+  margin-right: 1cqw;
+}
+
+.app>svg:hover {
+  fill: global.$green;
+}
+
+.report > iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.resume {
+  text-decoration: none;
+  font-size: 1.5cqw;
+  border: 2px solid global.$white;
+  border-radius: 2cqw;
+  padding: 0.75cqw;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5cqw;
+  width: fit-content;
+}
+
+.resume:hover {
+  border-color: global.$green;
+}
+
+.resume:hover > * {
+  color: global.$green;
+}

@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="summary">
+    <div class="header">
+      <span class="designation">{{ designation }}</span>
+      <span class="location">{{ location }}</span>
+    </div>
+    <div class="dash"></div>
+    <span class="about-me-content">{{ aboutMe }}</span>
+    <div class="academy">
+      <span>Academic Profile</span>
+      <div class="dash2"></div>
+      <span [innerHtml]="academy"></span>
+    </div>
+  </div>
+  <div class="personal-details">
+    @for (detail of details; track $index) {
+      <span class="detail-header">{{ detail.area }}</span>
+      <div class="dash2"></div>
+      <div class="detail-content">
+        @for (content of detail.content; track $index) {
+          <li>{{ content }}</li>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,66 @@
+@use "../utilities/global" as global;
+
+* {
+  color: global.$white;
+}
+
+.main-container {
+  margin: 3% 8% 5% 10%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5cqw;
+}
+
+.summary, .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.designation {
+  font-size: 3cqw;
+  color: global.$blue;
+}
+
+.location {
+  font-size: 2.25cqw;
+}
+
+.dash {
+  width: 50%;
+  height: 1.25cqh;
+  background-color: global.$blue;
+  margin-top: 4cqh;
+  margin-bottom: 5cqh;
+  border-radius: 1cqh;
+}
+
+.about-me-content {
+  font-size: 1.5cqw;
+}
+
+.academy {
+  margin-top: 5cqh;
+  font-size: 1.5cqw;
+}
+
+.dash2 {
+  width: 50%;
+  height: 0.75cqh;
+  background-color: global.$green;
+  margin-top: 1cqh;
+  margin-bottom: 1cqh;
+  border-radius: 1cqh;
+}
+
+.personal-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-header {
+  font-size: 1.5cqw;
+}
+
+.detail-content {
+  margin-bottom: 3cqh;
+}

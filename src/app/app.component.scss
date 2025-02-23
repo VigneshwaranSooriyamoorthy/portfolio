@@ -1,0 +1,46 @@
+@use "utilities/global" as global;
+
+* {
+  color: global.$white;
+}
+
+.menu {
+  width: fit-content;
+  justify-self: center;
+  border-radius: 3cqw;
+  padding: 0.4cqw;
+  background-color: global.$black;
+  margin-top: 2cqw;
+}
+
+.menu:hover {
+  box-shadow: 0 0 10px 5px global.$gray;
+}
+
+.menu-item {
+  text-decoration: none;
+  font-size: 3cqw;
+  padding: 0.5cqw 1cqw 0.5cqw 1cqw;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: global.$gray;
+  border-radius: 2cqw;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 35px;
+  width: 100%;
+  background-color: global.$blue;
+  text-align: center;
+  align-content: center;
+  text-transform: uppercase;
+  font-size: 1cqw;
+}
+
+footer a {
+  color: black;
+}

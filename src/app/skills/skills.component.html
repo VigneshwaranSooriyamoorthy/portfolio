@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="header-container">
+    <span class="header-part-1 size-l">Technical </span>
+    <span class="header-part-2 size-l">Skills</span>
+    <div class="dash"></div>
+  </div>
+  <div class="content-container">
+      @for (column of skills; track $index) {
+        <div class="column">
+        @for (skill of column.details; track $index) {
+          <span class="detail-header"><b>{{ skill.area }}</b></span>
+          <div class="dash2"></div>
+          @for (tool of skill.tools; track $index) {
+            <div class="skill">
+              <span class="skill-name">{{ tool.name }}</span>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" [ngStyle]="{'width.%': tool.rating * 100}"></div>
+              </div>
+            </div>
+          }
+        }
+        </div>
+      }
+  </div>
+</div>
