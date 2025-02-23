@@ -5,7 +5,7 @@
 }
 
 .main-container {
-  margin: 3% 8% 5% 10%;
+  margin: 2% 10%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 5cqw;
@@ -27,11 +27,11 @@
 
 .dash {
   width: 50%;
-  height: 1.25cqh;
+  height: 0.75cqw;
   background-color: global.$blue;
   margin-top: 4cqh;
   margin-bottom: 5cqh;
-  border-radius: 1cqh;
+  border-radius: 1cqw;
 }
 
 .about-me-content {
@@ -45,11 +45,11 @@
 
 .dash2 {
   width: 50%;
-  height: 0.75cqh;
+  height: 0.5cqw;
   background-color: global.$green;
   margin-top: 1cqh;
   margin-bottom: 1cqh;
-  border-radius: 1cqh;
+  border-radius: 1cqw;
 }
 
 .personal-details {
@@ -62,5 +62,6 @@
 }
 
 .detail-content {
+  font-size: 1cqw;
   margin-bottom: 3cqh;
 }

@@ -9,7 +9,7 @@
 }
 
 .main-container {
-  margin: 2% 8% 5% 10%;
+  margin: 2% 9%;
   display: grid;
 }
 
@@ -19,7 +19,7 @@
 
 .dash {
   width: 50%;
-  height: 1.25cqh;
+  height: 0.6cqw;
   background-color: global.$blue;
   margin-top: 2cqh;
   border-radius: 1cqh;
@@ -37,12 +37,13 @@
 }
 
 .detail-header {
-  margin-top: 4cqh;
+  margin-top: 3cqh;
+  font-size: 1.75cqw;
 }
 
 .dash2 {
   width: 50%;
-  height: 0.75cqh;
+  height: 0.5cqw;
   background-color: global.$green;
   margin-top: 1cqh;
   margin-bottom: 2cqh;
@@ -52,6 +53,10 @@
 .skill {
   display: grid;
   grid-template-columns: 0.75fr 1fr;
+}
+
+.skill-name {
+  font-size: 1cqw;
 }
 
 .progress-bar {

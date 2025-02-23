@@ -26,7 +26,7 @@
 
 .dash {
   width: 50%;
-  height: 2cqh;
+  height: 1cqw;
   background-color: global.$blue;
   margin-top: 5cqh;
   margin-bottom: 5cqh;
@@ -73,4 +73,8 @@
 
 .resume:hover > * {
   color: global.$green;
+}
+
+.resume-icon {
+  font-size: 1.5cqw;
 }
