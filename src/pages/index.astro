@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Home from '../components/Home.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Vigneshwaran Sooriyamoorthy | Portfolio">
+	<main>
+		<section id="Home" class="content-section active">
+			<Home />
+		</section>
+		
+		<section id="About" class="content-section">
+			<AboutMe />
+		</section>
+		
+		<section id="Skills" class="content-section">
+			<Skills />
+		</section>
+		
+		<section id="Contact" class="content-section">
+			<Contact />
+		</section>
+	</main>
+</Layout>
+
+<script>
+	const menuItems = document.querySelectorAll('.menu-item');
+	const sections = document.querySelectorAll('.content-section');
+
+	// Function to update active states
+	function setActive(targetId) {
+		// Update sections
+		sections.forEach(section => {
+			if (section.id === targetId) {
+				section.classList.add('active');
+			} else {
+				section.classList.remove('active');
+			}
+		});
+
+		// Update menu items
+		menuItems.forEach(item => {
+			if (item.getAttribute('title') === targetId) {
+				item.classList.add('active');
+			} else {
+				item.classList.remove('active');
+			}
+		});
+	}
+
+	// Initialize: set Home as active
+	setActive('Home');
+
+	menuItems.forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			const targetId = item.getAttribute('title'); // Home, About, Skills, Contact
+			setActive(targetId);
+		});
+	});
+</script>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 100%;
+		max-width: 1200px;
+		color: white;
+		position: relative;
+		height: calc(100vh - 8rem); /* Accounting for nav and footer */
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.content-section {
+		display: none;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.content-section.active {
+		display: block;
+		animation: fadeIn 0.3s ease-in;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+</style>
