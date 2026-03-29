@@ -1,0 +1,123 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+const menu = [
+  { name: 'Home', icon: 'home', url: '#home' },
+  { name: 'About', icon: 'person', url: '#about-me' },
+  { name: 'Skills', icon: 'engineering', url: '#skills' },
+  { name: 'Contact', icon: 'mail', url: '#contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Vigneshwaran Sooriyamoorthy - Portfolio" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav class="menu-container">
+			<div class="menu">
+				{menu.map((item) => (
+					<a href={item.url} title={item.name} class="material-symbols-rounded menu-item">
+						{item.icon}
+					</a>
+				))}
+			</div>
+		</nav>
+
+		<slot />
+
+		<footer>
+			Developed with ❤️ by Vigneshwaran Sooriyamoorthy
+		</footer>
+	</body>
+</html>
+
+<style lang="scss">
+	@use "../styles/global" as global;
+
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: global.$background;
+		scroll-behavior: smooth;
+		color: global.$white;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	body {
+		margin: 0;
+		padding-bottom: 4rem;
+		background-color: global.$background;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.menu-container {
+		display: flex;
+		justify-content: center;
+		position: sticky;
+		top: 1.5rem;
+		z-index: 100;
+	}
+
+	.menu {
+		width: fit-content;
+		border-radius: 3rem;
+		padding: 0.4rem;
+		background-color: global.$black;
+		display: flex;
+		gap: 0.2rem;
+		transition: box-shadow 0.3s ease;
+
+		&:hover {
+			box-shadow: 0 0 10px 5px global.$gray;
+		}
+	}
+
+	.menu-item {
+		text-decoration: none;
+		font-size: 2.5rem;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+		color: global.$white;
+		border-radius: 2rem;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background-color: global.$gray;
+		}
+
+		&.active {
+			background-color: global.$red;
+			color: global.$white;
+		}
+	}
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		height: 2.5rem;
+		width: 100%;
+		background-color: global.$blue;
+		color: global.$white;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		letter-spacing: 1px;
+		z-index: 100;
+	}
+</style>

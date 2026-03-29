@@ -1,0 +1,175 @@
+---
+const designation = 'Senior Test/Integration Engineer';
+const location = 'Eindhoven, The Netherlands';
+const currentDate = new Date();
+const dateOfJoining = new Date('2015-06-26');
+const monthDiff = currentDate.getMonth() - dateOfJoining.getMonth();
+const yearDiff = currentDate.getFullYear() - dateOfJoining.getFullYear();
+
+let experience = '';
+if (monthDiff === 0) {
+  experience = `${yearDiff} years`;
+} else if (monthDiff < 0) {
+  experience = `${yearDiff - 1} years and ${12 + monthDiff} months`;
+} else {
+  experience = `${yearDiff} years and ${monthDiff} months`;
+}
+
+const aboutMe = `Passionate Techno-Functional test engineer with ${experience} of professional experience skilled to analyze, test and develop scripts, able to learn, adapt and improve skills with focus and commitment for the excellence of Individual and the Organization`;
+const academy = '<b>Bachelor of Engineering in Mechatronics</b> with CGPA 9.2 by April 2015 from Sri Krishna College of Engineering and Technology (SKCET), Coimbatore, Tamilnadu, India';
+
+const details = [
+  {
+    area: 'Awards',
+    content: [
+      'Pursuing Innovation | Mar 21',
+      'Exception Client Service | Sep 20',
+      'SPOT | Feb 20',
+      'SPOT | Mar 19',
+      'Pillar of the Month | Jul 17',
+      'Olymation Gold Medal | Mar 17'
+    ]
+  },
+  {
+    area: 'Languages',
+    content: ['Tamil', 'English']
+  },
+  {
+    area: 'Nationality',
+    content: ['Indian']
+  },
+  {
+    area: 'Hobbies',
+    content: ['Carom', 'Chess', 'Sudoku']
+  }
+];
+---
+
+<div class="main-container">
+  <div class="summary">
+    <div class="header">
+      <span class="designation">{designation}</span>
+      <span class="location">{location}</span>
+    </div>
+    <div class="dash"></div>
+    <span class="about-me-content">{aboutMe}</span>
+    <div class="academy">
+      <span>Academic Profile</span>
+      <div class="dash1"></div>
+      <span set:html={academy}></span>
+    </div>
+  </div>
+  <div class="personal-details">
+    {details.map((detail) => (
+      <div class="detail-section">
+        <span class="detail-header">{detail.area}</span>
+        <div class="dash2"></div>
+        <div class="detail-content">
+          <ul>
+            {detail.content.map((content) => (
+              <li>{content}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style lang="scss">
+@use "../styles/global" as global;
+
+* {
+  color: global.$white;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5cqw;
+  height: 100%;
+  align-items: center;
+}
+
+.summary, .header {
+  display: flex;
+  flex-direction: column;
+}
+
+.designation {
+  font-size: 3cqw;
+  color: global.$blue;
+}
+
+.location {
+  font-size: 2.25cqw;
+  color: global.$muted;
+}
+
+.dash {
+  width: 50%;
+  height: 0.75cqw;
+  background-color: global.$blue;
+  margin-top: 3cqh;
+  margin-bottom: 3cqh;
+  border-radius: 1cqw;
+}
+
+.about-me-content {
+  font-size: 1.5cqw;
+  color: global.$white;
+}
+
+.academy {
+  margin-top: 5cqh;
+  font-size: 1.5cqw;
+  color: global.$white;
+}
+
+.dash1 {
+  width: 25%;
+  height: 0.5cqw;
+  background-color: global.$red;
+  margin-top: 1cqh;
+  margin-bottom: 2cqh;
+  border-radius: 1cqw;
+}
+
+.dash2 {
+  width: 50%;
+  height: 0.5cqw;
+  background-color: global.$red;
+  margin-top: 1cqh;
+  border-radius: 1cqw;
+}
+
+.personal-details {
+  margin: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.detail-header {
+  font-size: 1.5cqw;
+  color: global.$white;
+}
+
+.detail-content {
+  font-size: 1.2cqw;
+  color: global.$muted;
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+    
+    li {
+      color: global.$muted;
+    }
+  }
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+}
+</style>
