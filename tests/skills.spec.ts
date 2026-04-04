@@ -8,8 +8,8 @@ test.describe('Skills Section', () => {
   });
 
   test('should display the "Technical Skills" header', async ({ page }) => {
-    await expect(page.locator('.header-part-1')).toContainText('Technical');
-    await expect(page.locator('.header-part-2')).toContainText('Skills');
+    await expect(page.locator('#Skills .header-part-1')).toContainText('Technical');
+    await expect(page.locator('#Skills .header-part-2')).toContainText('Skills');
   });
 
   test('should display 3 skill columns', async ({ page }) => {
@@ -24,9 +24,7 @@ test.describe('Skills Section', () => {
 
   test('should display all automation tools', async ({ page }) => {
     const tools = ['PlayWright', 'Cypress', 'Selenium Webdriver', 'UiPath', 'UFT', 'VBA - Macro'];
-    for (const tool of tools) {
-      await expect(page.locator(`.skill-name:has-text("${tool}")`)).toBeVisible();
-    }
+    expect(await page.locator('.skill-area').filter({ hasText: 'Automation Tools' }).locator('.skill-name').allTextContents()).toEqual(tools);
   });
 
   test('should display Testing Framework category', async ({ page }) => {
@@ -36,9 +34,7 @@ test.describe('Skills Section', () => {
 
   test('should display all testing frameworks', async ({ page }) => {
     const tools = ['Cucumber', 'NUnit', 'PyTest', 'TestNG'];
-    for (const tool of tools) {
-      await expect(page.locator(`.skill-name:has-text("${tool}")`)).toBeVisible();
-    }
+    expect(await page.locator('.skill-area').filter({ hasText: 'Testing Framework' }).locator('.skill-name').allTextContents()).toEqual(tools);
   });
 
   test('should display Version Control category with Git', async ({ page }) => {
@@ -48,15 +44,13 @@ test.describe('Skills Section', () => {
   });
 
   test('should display Language category', async ({ page }) => {
-    const header = page.locator('.detail-header:has-text("Language")');
+    const header = page.locator('#Skills .detail-header:has-text("Language")');
     await expect(header).toBeVisible();
   });
 
   test('should display all programming languages', async ({ page }) => {
     const tools = ['JavaScript', 'TypeScript', 'Java', 'Python', '.Net C#'];
-    for (const tool of tools) {
-      await expect(page.locator(`.skill-name:has-text("${tool}")`)).toBeVisible();
-    }
+    expect(await page.locator('.skill-area').filter({ hasText: 'Language' }).locator('.skill-name').allTextContents()).toEqual(tools);
   });
 
   test('should display API Automation Testing category', async ({ page }) => {
@@ -71,9 +65,7 @@ test.describe('Skills Section', () => {
     await expect(header).toBeVisible();
 
     const ides = ['IntelliJ', 'VS Code', 'Visual Studio'];
-    for (const ide of ides) {
-      await expect(page.locator(`.skill-name:has-text("${ide}")`)).toBeVisible();
-    }
+    expect(await page.locator('.skill-area').filter({ hasText: 'IDE' }).locator('.skill-name').allTextContents()).toEqual(ides);
   });
 
   test('should display Database category', async ({ page }) => {
@@ -93,10 +85,8 @@ test.describe('Skills Section', () => {
     const header = page.locator('.detail-header:has-text("Project Management")');
     await expect(header).toBeVisible();
 
-    const tools = ['Atlassian Jira', 'ALM'];
-    for (const tool of tools) {
-      await expect(page.locator(`.skill-name:has-text("${tool}")`)).toBeVisible();
-    }
+    const tools = ['Atlassian Jira', 'Azure DevOps', 'ALM'];
+    expect(await page.locator('.skill-area').filter({ hasText: 'Project Management' }).locator('.skill-name').allTextContents()).toEqual(tools);
   });
 
   test('should render progress bars for each skill', async ({ page }) => {

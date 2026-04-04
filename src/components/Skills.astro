@@ -1,203 +1,208 @@
 ---
 const skills = [
-  {
-    column: 1,
-    details: [
-      {
-        area: 'Automation Tools',
-        tools: [
-          { name: 'PlayWright', rating: 0.7 },
-          { name: 'Cypress', rating: 0.8 },
-          { name: 'Selenium Webdriver', rating: 0.8 },
-          { name: 'UiPath', rating: 0.6 },
-          { name: 'UFT', rating: 0.6 },
-          { name: 'VBA - Macro', rating: 0.6 }
-        ]
-      },
-      {
-        area: 'Testing Framework',
-        tools: [
-          { name: 'Cucumber', rating: 0.8 },
-          { name: 'NUnit', rating: 0.6 },
-          { name: 'PyTest', rating: 0.6 },
-          { name: 'TestNG', rating: 0.6 }
-        ]
-      },
-      {
-        area: 'Version Control',
-        tools: [
-          { name: 'Git', rating: 0.8 }
-        ]
-      }
-    ]
-  },
-  {
-    column: 2,
-    details: [
-      {
-        area: 'Language',
-        tools: [
-          { name: 'JavaScript', rating: 0.5 },
-          { name: 'TypeScript', rating: 0.5 },
-          { name: 'Java', rating: 0.7 },
-          { name: 'Python', rating: 0.8 },
-          { name: '.Net C#', rating: 0.6 }
-        ]
-      },
-      {
-        area: 'API Automation Testing',
-        tools: [
-          { name: 'Karate', rating: 0.6 },
-          { name: 'RestSharp', rating: 0.4 }
-        ]
-      },
-      {
-        area: 'IDE',
-        tools: [
-          { name: 'IntelliJ', rating: 0.8 },
-          { name: 'VS Code', rating: 0.6 },
-          { name: 'Visual Studio', rating: 0.5 }
-        ]
-      }
-    ]
-  },
-  {
-    column: 3,
-    details: [
-      {
-        area: 'Database',
-        tools: [
-          { name: 'Microsoft SQL Server', rating: 0.6 },
-          { name: 'MongoDB', rating: 0.4 }
-        ]
-      },
-      {
-        area: 'CI-CD',
-        tools: [
-          { name: 'Atlassian Bamboo', rating: 0.8 },
-          { name: 'Azure DevOps', rating: 0.8 }
-        ]
-      },
-      {
-        area: 'Project Management',
-        tools: [
-          { name: 'Atlassian Jira', rating: 0.8 },
-          { name: 'Azure DevOps', rating: 0.8 },
-          { name: 'ALM', rating: 0.7 }
-        ]
-      }
-    ]
-  }
+    {
+        column: 1,
+        details: [
+            {
+                area: 'Automation Tools',
+                tools: [
+                    { name: 'PlayWright', rating: 0.7 },
+                    { name: 'Cypress', rating: 0.8 },
+                    { name: 'Selenium Webdriver', rating: 0.8 },
+                    { name: 'UiPath', rating: 0.6 },
+                    { name: 'UFT', rating: 0.6 },
+                    { name: 'VBA - Macro', rating: 0.6 },
+                ],
+            },
+            {
+                area: 'Testing Framework',
+                tools: [
+                    { name: 'Cucumber', rating: 0.8 },
+                    { name: 'NUnit', rating: 0.6 },
+                    { name: 'PyTest', rating: 0.6 },
+                    { name: 'TestNG', rating: 0.6 },
+                ],
+            },
+            {
+                area: 'Version Control',
+                tools: [{ name: 'Git', rating: 0.8 }],
+            },
+        ],
+    },
+    {
+        column: 2,
+        details: [
+            {
+                area: 'Language',
+                tools: [
+                    { name: 'JavaScript', rating: 0.5 },
+                    { name: 'TypeScript', rating: 0.5 },
+                    { name: 'Java', rating: 0.7 },
+                    { name: 'Python', rating: 0.8 },
+                    { name: '.Net C#', rating: 0.6 },
+                ],
+            },
+            {
+                area: 'API Automation Testing',
+                tools: [
+                    { name: 'Karate', rating: 0.6 },
+                    { name: 'RestSharp', rating: 0.4 },
+                ],
+            },
+            {
+                area: 'IDE',
+                tools: [
+                    { name: 'IntelliJ', rating: 0.8 },
+                    { name: 'VS Code', rating: 0.6 },
+                    { name: 'Visual Studio', rating: 0.5 },
+                ],
+            },
+        ],
+    },
+    {
+        column: 3,
+        details: [
+            {
+                area: 'Database',
+                tools: [
+                    { name: 'Microsoft SQL Server', rating: 0.6 },
+                    { name: 'MongoDB', rating: 0.4 },
+                ],
+            },
+            {
+                area: 'CI-CD',
+                tools: [
+                    { name: 'Atlassian Bamboo', rating: 0.8 },
+                    { name: 'Azure DevOps', rating: 0.8 },
+                ],
+            },
+            {
+                area: 'Project Management',
+                tools: [
+                    { name: 'Atlassian Jira', rating: 0.8 },
+                    { name: 'Azure DevOps', rating: 0.8 },
+                    { name: 'ALM', rating: 0.7 },
+                ],
+            },
+        ],
+    },
 ];
 ---
 
 <div class="main-container">
-  <div class="header-container">
-    <span class="header-part-1 size-l">Technical </span>
-    <span class="header-part-2 size-l">Skills</span>
-    <div class="dash"></div>
-  </div>
-  <div class="content-container">
-    {skills.map((column) => (
-      <div class="column">
-        {column.details.map((skill) => (
-          <div class="skill-area">
-            <span class="detail-header"><b>{skill.area}</b></span>
-            <div class="dash2"></div>
-            {skill.tools.map((tool) => (
-              <div class="skill-row">
-                <span class="skill-name">{tool.name}</span>
-                <div class="progress-bar">
-                  <div class="progress-bar-fill" style={`width: ${tool.rating * 100}%`}></div>
+    <div class="header-container">
+        <span class="header-part-1 size-l">Technical </span>
+        <span class="header-part-2 size-l">Skills</span>
+        <div class="dash"></div>
+    </div>
+    <div class="content-container">
+        {
+            skills.map((column) => (
+                <div class="column">
+                    {column.details.map((skill) => (
+                        <div class="skill-area">
+                            <span class="detail-header">
+                                <b>{skill.area}</b>
+                            </span>
+                            <div class="dash2" />
+                            {skill.tools.map((tool) => (
+                                <div class="skill-row">
+                                    <span class="skill-name">{tool.name}</span>
+                                    <div class="progress-bar">
+                                        <div
+                                            class="progress-bar-fill"
+                                            style={`width: ${tool.rating * 100}%`}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 </div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-    ))}
-  </div>
+            ))
+        }
+    </div>
 </div>
 
 <style lang="scss">
-@use "../styles/global" as global;
+    @use '../styles/global' as global;
 
-* {
-  color: global.$white;
-}
+    * {
+        color: global.$white;
+    }
 
-.size-l {
-  font-size: 3cqw;
-}
+    .size-l {
+        font-size: 3cqw;
+    }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-}
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+    }
 
-.header-part-2 {
-  color: global.$blue;
-}
+    .header-part-2 {
+        color: global.$blue;
+    }
 
-.dash {
-  width: 30%;
-  height: 0.6cqw;
-  background-color: global.$blue;
-  margin-top: 2cqh;
-  margin-bottom: 2cqh;
-  border-radius: 1cqh;
-}
+    .dash {
+        width: 30%;
+        height: 0.6cqw;
+        background-color: global.$blue;
+        margin-top: 2cqh;
+        margin-bottom: 2cqh;
+        border-radius: 1cqh;
+    }
 
-.content-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5cqw;
-}
+    .content-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5cqw;
+    }
 
-.column {
-  display: flex;
-  flex-direction: column;
-}
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
 
-.detail-header {
-  margin-top: 3cqh;
-  font-size: 1.75cqw;
-}
+    .detail-header {
+        margin-top: 3cqh;
+        font-size: 1.75cqw;
+    }
 
-.dash2 {
-  width: 50%;
-  height: 0.35cqw;
-  background-color: global.$red;
-  margin-top: 1cqh;
-  margin-bottom: 2cqh;
-  border-radius: 1cqh;
-}
+    .dash2 {
+        width: 50%;
+        height: 0.35cqw;
+        background-color: global.$red;
+        margin-top: 1cqh;
+        margin-bottom: 2cqh;
+        border-radius: 1cqh;
+    }
 
-.skill-row {
-  display: grid;
-  grid-template-columns: 0.75fr 1fr;
-  align-items: center;
-  margin-bottom: 0.25rem;
-}
+    .skill-row {
+        display: grid;
+        grid-template-columns: 0.75fr 1fr;
+        align-items: center;
+        margin-bottom: 0.25rem;
+    }
 
-.skill-name {
-  font-size: 1cqw;
-  color: global.$muted;
-}
+    .skill-name {
+        font-size: 1cqw;
+        color: global.$muted;
+    }
 
-.progress-bar {
-  height: 0.75cqh;
-  background-color: global.$gray;
-}
+    .progress-bar {
+        height: 0.75cqh;
+        background-color: global.$gray;
+    }
 
-.progress-bar-fill {
-  background-color: global.$blue;
-  height: 100%;
-}
+    .progress-bar-fill {
+        background-color: global.$blue;
+        height: 100%;
+    }
 
-.skill-area {
-  margin-bottom: 1rem;
-}
+    .skill-area {
+        margin-bottom: 1rem;
+    }
 </style>

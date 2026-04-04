@@ -1,83 +1,82 @@
 ---
-const email = "hivigneshwarans@gmail.com";
+const email = 'hivigneshwarans@gmail.com';
 ---
 
 <div class="main-container">
-  <div class="header-container">
-    <span class="header-part-1 size-l">Get in </span>
-    <span class="header-part-2 size-l">Touch</span>
-    <div class="dash"></div>
-  </div>
-  <div class="content-container">
-    <p class="contact-text">
-      I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-    </p>
-    <a href={`mailto:${email}`} class="contact-button">
-      Say Hello
-    </a>
-  </div>
+    <div class="header-container">
+        <span class="header-part-1 size-l">Get in </span>
+        <span class="header-part-2 size-l">Touch</span>
+        <div class="dash"></div>
+    </div>
+    <div class="content-container">
+        <p class="contact-text">
+            I'm currently open to new opportunities. Whether you have a question
+            or just want to say hi, I'll try my best to get back to you!
+        </p>
+        <a href={`mailto:${email}`} class="contact-button"> Say Hello </a>
+    </div>
 </div>
 
 <style lang="scss">
-@use "../styles/global" as global;
+    @use '../styles/global' as global;
 
-* {
-  color: global.$white;
-}
+    * {
+        color: global.$white;
+    }
 
-.size-l {
-  font-size: 3cqw;
-}
+    .size-l {
+        font-size: 3cqw;
+    }
 
-.main-container {
-  margin: 0 5%;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+    .main-container {
+        margin: 0 5%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 
-.header-part-2 {
-  color: global.$blue;
-}
+    .header-part-2 {
+        color: global.$blue;
+    }
 
-.dash {
-  width: 50%;
-  height: 0.6cqw;
-  background-color: global.$blue;
-  margin-top: 1rem;
-  margin-inline: auto;
-  border-radius: 1cqh;
-}
+    .dash {
+        width: 50%;
+        height: 0.6cqw;
+        background-color: global.$blue;
+        margin-top: 1rem;
+        margin-inline: auto;
+        border-radius: 1cqh;
+    }
 
-.content-container {
-  margin-top: 2rem;
-  max-width: 600px;
-}
+    .content-container {
+        margin-top: 2rem;
+        max-width: 600px;
+    }
 
-.contact-text {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: global.$muted;
-}
+    .contact-text {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: global.$muted;
+    }
 
-.contact-button {
-  display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
-  color: global.$white;
-  border: 2px solid global.$white;
-  border-radius: 2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
+    .contact-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 1.25rem;
+        color: global.$white;
+        border: 2px solid global.$white;
+        border-radius: 2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
 
-  &:hover {
-    background-color: global.$red;
-    color: global.$white;
-    border-color: global.$red;
-  }
-}
+        &:hover {
+            background-color: global.$red;
+            color: global.$white;
+            border-color: global.$red;
+        }
+    }
 </style>
